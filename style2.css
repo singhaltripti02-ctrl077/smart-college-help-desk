@@ -1,0 +1,319 @@
+/* ===========================
+   CSS VARIABLES (Reusable)
+=========================== */
+:root {
+    --primary: #ff4d6d;       /* bright pink/red */
+    --primary-dark: #c9184a;
+    --secondary: #3a0ca3;     /* deep purple */
+    --accent: #4cc9f0;        /* neon blue */
+    --bg-light: #f8f9ff;      /* soft light background */
+    --white: #ffffff;
+    --shadow: 0 5px 20px rgba(0,0,0,0.15);
+    --radius: 12px;
+    --transition: 0.3s ease;
+}
+/* ===========================
+   Global Styles
+=========================== */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: var(--bg-light);
+}
+
+/* ===========================
+   Header & Navigation
+=========================== */
+header {
+    background: var(--secondary);
+    color: var(--white);
+    padding: 15px;
+    text-align: center;
+}
+
+#datetime {
+    font-size: 14px;
+    color: var(--accent);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+nav a {
+    position: relative;
+    text-decoration: none;
+    color: var(--white);
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background: rgba(255,255,255,0.1);
+    transition: var(--transition);
+}
+
+nav a:hover {
+    color: white;
+    background: linear-gradient(45deg, var(--primary), var(--accent));
+
+}
+
+/* underline animation */
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--accent);
+    transition: var(--transition);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ===========================
+   Hero Sections
+=========================== */
+.hero,
+.contact-hero,
+.about-hero {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--white);
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+}
+
+.hero button,
+.about-hero button {
+    padding: 12px 25px;
+    background: var(--white);
+    color: var(--primary);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.hero button:hover,
+.about-hero button:hover {
+    background: #eee;
+}
+
+/* ===========================
+   Cards (General)
+=========================== */
+.services,
+.contact-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px 20px;
+}
+
+.card,
+.contact-card {
+    background: var(--white);
+    padding: 20px;
+    width: 220px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
+    cursor: pointer;
+    position: relative;
+}
+
+.card:hover,
+.contact-card:hover {
+    transform: scale(1.05);
+}
+
+/* ===========================
+   ABOUT PAGE FEATURE CARDS (FIXED ✅)
+=========================== */
+.feature-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 per row */
+    gap: 25px;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.feature-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
+}
+
+/* hover effect */
+.feature-card:hover {
+    transform: translateY(-5px) scale(1.03);
+}
+
+/* ===========================
+   Tooltip for cards
+=========================== */
+.card::after {
+    
+    position: absolute;
+    left: 50%;
+    bottom: -60px;
+    transform: translateX(-50%);
+    background: var(--secondary);
+    color: var(--white);
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 13px;
+    opacity: 0;
+    transition: var(--transition);
+    width: 200px;
+}
+
+.card:hover::after {
+    opacity: 1;
+    bottom: -70px;
+}
+
+/* ===========================
+   Tooltip (Form Fields)
+=========================== */
+.tooltip {
+    position: relative;
+    cursor: pointer;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--secondary);
+    color: var(--white);
+    padding: 8px;
+    border-radius: 6px;
+    width: 180px;
+    font-size: 13px;
+    transition: var(--transition);
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ===========================
+   Forms
+=========================== */
+form {
+    max-width: 400px;
+    margin: 30px auto;
+    background: var(--white);
+    padding: 25px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+ button {
+    background: linear-gradient(45deg, var(--primary), var(--accent));
+    color: white;
+    font-weight: bold;
+}
+
+button:hover {
+    background: var(--primary-dark);
+}
+
+/* ===========================
+   Footer
+=========================== */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: var(--secondary);
+    color: var(--white);
+    margin-top: 40px;
+}
+
+/* ===========================
+   Modal
+=========================== */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 1000;
+}
+
+.modal-content {
+    background: var(--bg-light);
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: var(--radius);
+    width: 80%;
+    max-width: 600px;
+    box-shadow: var(--shadow);
+    animation: fadeIn 0.3s ease;
+}
+
+.close {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: var(--accent);
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* ===========================
+   Contact Section
+=========================== */
+.contact-form-section {
+    text-align: center;
+    margin: 40px 20px;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+@media (max-width: 768px) {
+    .services,
+    .contact-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* feature cards mobile fix */
+    .feature-cards {
+        grid-template-columns: 1fr;
+    }
+}

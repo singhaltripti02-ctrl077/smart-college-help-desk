@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Form</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+<header>
+    <h1>Submit Your Complaint</h1>
+    <p id="datetime"></p>
+    <nav>
+        <a href="Home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="complaint.html">Complaint</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section>
+    <form id="complaintForm">
+        <h2>Student Complaint Form</h2>
+
+        <!-- Personal Info -->
+        <div class="form-section">
+            <h3>Personal Information</h3>
+            <label for="name">Name <span class="tooltip">ℹ
+                <span class="tooltiptext">Enter your full name.</span>
+            </span></label>
+            <input type="text" id="name" placeholder="Your Name" required>
+
+            <label for="email">Email <span class="tooltip">ℹ
+                <span class="tooltiptext">Enter a valid email address.</span>
+            </span></label>
+            <input type="email" id="email" placeholder="Your Email" required>
+
+            <label for="studentId">Student ID <span class="tooltip">ℹ
+                <span class="tooltiptext">Your official student ID.</span>
+            </span></label>
+            <input type="text" id="studentId" placeholder="Student ID" required>
+
+            <label for="department">Department <span class="tooltip">ℹ
+                <span class="tooltiptext">Enter your department (optional).</span>
+            </span></label>
+            <input type="text" id="department" placeholder="Department">
+        </div>
+
+        <!-- Issue Info -->
+        <div class="form-section">
+            <h3>Issue Details</h3>
+            <label for="issue">Issue Type <span class="tooltip">ℹ
+                <span class="tooltiptext">Select the category of your complaint.</span>
+            </span></label>
+            <select id="issue" required>
+                <option value="">--Select Issue--</option>
+                <option>Admission</option>
+                <option>Fees</option>
+                <option>Library</option>
+                <option>Hostel</option>
+                <option>Technical</option>
+            </select>
+
+            <label for="complaint">Complaint <span class="tooltip">ℹ
+                <span class="tooltiptext">Describe your issue clearly.</span>
+            </span></label>
+            <textarea id="complaint" rows="5" placeholder="Write your complaint here..." required></textarea>
+        </div>
+
+        <button type="submit">Submit Complaint</button>
+    </form>
+</section>
+
+<!-- Success Modal -->
+<div id="successModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Complaint Submitted!</h2>
+        <p>Your complaint has been received successfully. Our team will contact you soon.</p>
+        <button onclick="window.location.href='Home.html'">Back to Home</button>
+    </div>
+</div>
+
+<footer>
+    <p>@ 2026 Smart College HelpDesk</p>
+</footer>
+<script src="script2.js"></script>
+</body>
+</html>

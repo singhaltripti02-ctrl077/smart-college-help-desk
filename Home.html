@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart College HelpDesk</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+<header>
+    <h1>🎓 Smart College HelpDesk</h1>
+    <p id="datetime"></p>
+    <nav>
+        <a href="Home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="complaint.html">Complaint</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Your Problems, Our Priority</h2>
+    <p>Submit college complaints easily and get quick support.</p>
+    <button onclick="welcome()">Get Support</button>
+</section>
+
+<section class="services">
+    <div class="card" >
+        <h3>📚 Library Issues</h3>
+        <p>Report problems related to library books or access.</p>
+    </div>
+    <div class="card" >
+        <h3>💰 Fee Queries</h3>
+        <p>Ask questions about tuition or payment issues.</p>
+    </div>
+    <div class="card" >
+        <h3>💻 Technical Help</h3>
+        <p>Get support for website or portal problems.</p>
+    </div>
+</section>
+<footer>
+    <p>© 2026 Smart College HelpDesk</p>
+</footer>
+
+
+<!-- Modal Structure -->
+<div id="infoModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Smart College HelpDesk</h2>
+    <h3>How to Register a Complaint</h3>
+    <p>1. Go to the Complaint page.</p>
+    <p>2. Fill in all required fields (Name, Email, Student ID, Department, Issue Type, Complaint).</p>
+    <p>3. Click "Submit Complaint".</p>
+
+    <h3>Check Progress Report</h3>
+    <p>Currently, you can contact the helpdesk via the Contact page to inquire about complaint status.</p>
+
+    <h3>Portal Related Issues</h3>
+    <p>If you face technical issues with login, library access, or fee payment portal, submit a complaint under "Technical" issue type.</p>
+  </div>
+</div>
+<script src="script2.js"></script>
+</body>
+</html>
